@@ -3,7 +3,6 @@ package com.example.cuadricula
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -22,7 +21,10 @@ fun TopicsGrid(
         contentPadding = PaddingValues(8.dp),
         modifier = modifier
     ) {
-        items(DataSource.topics) { topic ->
+        items(
+            items = DataSource.topics,
+            key = { topic -> topic.stringResourceId }
+        ) { topic ->
             TopicCard(
                 topic = topic,
                 modifier = Modifier.fillMaxWidth()
@@ -31,4 +33,3 @@ fun TopicsGrid(
     }
 }
 
-TopicsGrid(modifier = Modifier.padding(8.dp))
