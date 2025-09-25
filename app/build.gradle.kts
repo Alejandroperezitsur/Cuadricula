@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.cuadricula"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.cuadricula"
